@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Smart Notas</title>
+  <meta name="description" content="Bloco de notas organizado por pastas, com editor rico e salvamento automático." />
+  <meta name="theme-color" content="#17342C" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Smart Notas" />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="topbar">
+    <button id="btnSidebar" class="icon-btn" title="Mostrar ou ocultar pastas">☰</button>
+    <h1 class="wordmark">Smart <em>Notas</em></h1>
+    <span id="saveTag" class="save-tag">Salvo ✓</span>
+  </header>
+
+  <div class="body">
+    <!-- Coluna de pastas -->
+    <aside id="sidebar" class="sidebar">
+      <div class="side-top">
+        <span class="side-label">Pastas</span>
+        <button id="btnNewFolder" class="plus-btn" title="Nova pasta">+</button>
+      </div>
+      <div id="newFolderRow" class="new-folder-row hidden">
+        <input id="newFolderName" class="folder-input" placeholder="Nome da pasta" />
+        <button id="btnConfirmFolder" class="confirm-btn">OK</button>
+      </div>
+      <div id="folderList" class="folder-list"></div>
+      <p id="sideEmpty" class="side-empty hidden">Nenhuma pasta ainda.</p>
+    </aside>
+
+    <!-- Área principal -->
+    <main id="main" class="main"></main>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
